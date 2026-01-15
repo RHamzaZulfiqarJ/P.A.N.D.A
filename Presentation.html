@@ -1,0 +1,3246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>P.A.N.D.A. | Strategic Investment Deck 2026</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            overflow: hidden;
+            text-align: justify;
+        }
+        .slide {
+            height: 100vh;
+            width: 100vw;
+            display: none;
+            padding: 4rem;
+            box-sizing: border-box;
+            background: #000;
+            border: 1px solid #333;
+            position: relative;
+        }
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .content-block {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s ease-out;
+        }
+        .active .content-block {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .grid-line {
+            position: absolute;
+            background: #222;
+        }
+        .footer {
+            position: absolute;
+            bottom: 2rem;
+            left: 4rem;
+            right: 4rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-top: 1px solid #222;
+            padding-top: 1rem;
+        }
+        .stat-box {
+            border-left: 2px solid #fff;
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: #fff;
+            z-index: 100;
+            transition: width 0.3s ease;
+        }
+        .table-row {
+            border-bottom: 1px solid #222;
+            padding: 0.75rem 0;
+        }
+        .chart-mock {
+            background: linear-gradient(90deg, #111 0%, #000 100%);
+            border: 1px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+        .bar {
+            background: #fff;
+            position: absolute;
+            bottom: 0;
+            transition: height 1s ease-in-out;
+        }
+        kbd {
+            background: #222;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+        }
+        .graph-dot {
+            position: absolute;
+            transform: translate(-50%, 50%) scale(0);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .graph-dot span {
+            display: block;
+            margin-top: 6px;
+            font-size: 0.7rem;
+            color: #9ca3af;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 9999px;
+            background: white;
+        }
+
+        .dot.gray {
+            background: #9ca3af;
+        }
+
+        .dot.dim {
+            background: #6b7280;
+        }
+
+        .dot.panda-dot {
+            width: 18px;
+            height: 18px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- NAVIGATION OVERLAY -->
+    <!-- <div style="position: fixed; bottom: 20px; right: 600px; z-index: 1000; display: flex; gap: 10px;">
+        <button onclick="prevSlide()" class="px-4 py-2 border border-white hover:bg-white hover:text-black transition">PREV</button>
+        <button onclick="nextSlide()" class="px-4 py-2 border border-white hover:bg-white hover:text-black transition">NEXT</button>
+    </div> -->
+
+    <!-- SLIDE 1: COVER (ENHANCED) -->
+    <div class="slide active" id="slide-1">
+        <div class="flex-1 flex flex-col justify-center max-w-6xl">
+            
+            <!-- Meta Line -->
+            <h4 class="text-sm font-light tracking-[0.3em] mb-6 opacity-60 uppercase">
+                Strategic Investment Memorandum · Series A · 2026
+            </h4>
+
+            <!-- Main Title -->
+            <h1 class="text-9xl font-extrabold tracking-tighter leading-none mb-6">
+                P.A.N.D.A.
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-2xl font-light max-w-3xl text-gray-400 leading-relaxed">
+                Predictive Analytic Network for Diagnostic Assistance —  
+                building the offline AI diagnostic infrastructure for the world’s most underserved populations.
+            </p>
+
+            <!-- Divider -->
+            <div class="mt-10 h-px w-full bg-white"></div>
+
+            <!-- Strategic Positioning -->
+            <div class="mt-10 grid grid-cols-3 gap-8 text-sm text-gray-400">
+                <div>
+                    <p class="uppercase tracking-widest text-xs text-gray-500 mb-2">Industry</p>
+                    <p>HealthTech · Medical Devices · Edge AI</p>
+                </div>
+                <div>
+                    <p class="uppercase tracking-widest text-xs text-gray-500 mb-2">Business Model</p>
+                    <p>For-Profit · Impact-Driven · B2G / B2B</p>
+                </div>
+                <div>
+                    <p class="uppercase tracking-widest text-xs text-gray-500 mb-2">Initial Focus Region</p>
+                    <p>Rural South Asia (India & Pakistan)</p>
+                </div>
+            </div>
+
+            <!-- Thesis Statement -->
+            <div class="mt-12 max-w-4xl">
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    P.A.N.D.A. addresses the global diagnostic access gap by deploying ruggedized, 
+                    offline-first AI diagnostic hubs at the village level — enabling early detection, 
+                    faster referrals, and systemic cost reduction across low-resource healthcare systems.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Confidential</span>
+            <span>Slide 01 / 30</span>
+        </div>
+    </div>
+
+
+    <!-- SLIDE 2: EXECUTIVE OVERVIEW (ENHANCED) -->
+    <div class="slide" id="slide-2">
+        <h2 class="text-4xl font-bold mb-10 uppercase tracking-tight">
+            02. Executive Overview
+        </h2>
+
+        <div class="grid grid-cols-2 gap-16">
+
+            <!-- LEFT COLUMN -->
+            <div class="content-block space-y-8">
+
+                <!-- What We Are -->
+                <div>
+                    <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-2">
+                        Company Snapshot
+                    </h3>
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        P.A.N.D.A. is a <strong>for-profit, impact-driven HealthTech company</strong> 
+                        delivering offline-first, AI-powered diagnostic intelligence to rural and 
+                        low-resource healthcare systems. Our platform enables frontline health workers 
+                        to detect, triage, and refer life-threatening conditions within minutes — 
+                        without reliance on internet connectivity or specialist availability.
+                    </p>
+                </div>
+
+                <!-- Problem -->
+                <div class="stat-box">
+                    <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-2">
+                        The Problem
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Over <strong>3.5 billion people</strong> lack access to basic diagnostic services.  
+                        In rural South Asia, delayed diagnosis contributes to <strong>30–40% of preventable mortality</strong>, 
+                        driven by infrastructure gaps, specialist shortages, and urban-centric healthcare delivery models.
+                    </p>
+                </div>
+
+                <!-- Solution -->
+                <div class="stat-box">
+                    <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-2">
+                        The Solution
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        P.A.N.D.A. deploys ruggedized diagnostic hubs combining multi-sensor hardware 
+                        (ECG, SpO₂, temperature, respiratory acoustics) with on-device Edge AI to deliver 
+                        <strong>instant risk stratification</strong>, actionable clinical insights, and 
+                        referral guidance at the village level.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="content-block bg-zinc-900 p-10 border border-zinc-800 space-y-8 -mt-10" style="transition-delay: 0.2s;">
+
+                <!-- Investment Thesis -->
+                <div>
+                    <h3 class="text-sm uppercase tracking-widest mb-4 text-gray-500">
+                        Investment Thesis
+                    </h3>
+                    <ul class="space-y-4 text-sm text-gray-300 leading-relaxed">
+                        <li>
+                            • <strong>Massive Market:</strong> $22.5B global AI diagnostics TAM; 
+                            $4.8B SAM across rural LMIC healthcare by 2028 (est.).
+                        </li>
+                        <li>
+                            • <strong>Structural Advantage:</strong> Offline-first Edge AI solves 
+                            connectivity and infrastructure constraints that invalidate cloud-based competitors.
+                        </li>
+                        <li>
+                            • <strong>Capital Efficiency:</strong> Hardware-as-a-Service model with 
+                            <strong>65%+ gross margins</strong> and recurring SaaS revenue.
+                        </li>
+                        <li>
+                            • <strong>Defensibility:</strong> Proprietary rural clinical datasets and 
+                            sensor-fusion IP create long-term data and algorithmic moats.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Why Now -->
+                <div class="border-t border-zinc-800 pt-6">
+                    <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-3">
+                        Why Now
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Advances in low-power edge computing, rising government health digitization budgets, 
+                        and post-COVID prioritization of early diagnosis have created a narrow window 
+                        to establish diagnostic infrastructure in emerging markets before incumbents adapt.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Strategic Overview</span>
+            <span>Slide 02 / 30</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: GLOBAL HEALTHCARE INEQUALITY -->
+    <div class="slide" id="slide-3">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            03. Global Healthcare Inequality
+        </h2>
+
+        <div class="grid grid-cols-3 gap-16 items-start">
+
+            <!-- LEFT CONTENT -->
+            <div class="content-block space-y-8">
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    Global healthcare outcomes are not constrained by medical knowledge,
+                    but by <strong>access to timely diagnostics</strong>. While urban populations
+                    benefit from dense clinical infrastructure, rural regions in LMICs operate
+                    under extreme diagnostic scarcity.
+                </p>
+
+                <div class="stat-box">
+                    <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-2">
+                        Physician Density Gap
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Urban regions average <strong>1 physician per 1,000 people</strong>.
+                        Rural South Asia falls to <strong>1 per 15,000+</strong>, rendering
+                        specialist-dependent diagnostic models structurally unviable.
+                    </p>
+                </div>
+
+                <div class="stat-box">
+                    <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-2">
+                        Infrastructure Reality
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Over <strong>70% of rural health posts</strong> lack consistent electricity,
+                        broadband connectivity, or climate-controlled environments — invalidating
+                        cloud-dependent medical technologies.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT: CHART -->
+            <div class="col-span-2 content-block">
+
+                <p class="text-sm uppercase tracking-widest text-gray-500 mb-6">
+                    Diagnostic Capacity per 10,000 Population
+                </p>
+
+                <!-- CHART CONTAINER -->
+                <div class="relative bg-gradient-to-r from-zinc-900 to-black border border-zinc-800 p-10">
+
+                    <!-- AXIS + BARS ROW -->
+                    <div class="flex items-end h-64 gap-12">
+
+                        <!-- Y AXIS -->
+                        <div class="flex flex-col justify-between h-full text-xs text-gray-500">
+                            <span>10</span>
+                            <span>7.5</span>
+                            <span>5</span>
+                            <span>2.5</span>
+                            <span>0</span>
+                        </div>
+
+                        <!-- BAR GROUP -->
+                        <div class="flex items-end gap-20 flex-1 justify-center">
+
+                            <!-- URBAN -->
+                            <div class="flex flex-col items-center">
+                                <div class="relative w-16 h-56 bg-zinc-800 flex items-end">
+                                    <div class="bar w-full bg-white"
+                                        data-value="92%"
+                                        style="height:0%">
+                                    </div>
+                                </div>
+                                <p class="mt-4 text-xs uppercase text-gray-400">Urban (HIC)</p>
+                                <p class="text-xs text-gray-500">9.2 units</p>
+                            </div>
+
+                            <!-- SEMI-URBAN -->
+                            <div class="flex flex-col items-center">
+                                <div class="relative w-16 h-56 bg-zinc-800 flex items-end">
+                                    <div class="bar w-full bg-white opacity-30"
+                                        data-value="46%"
+                                        style="height:0%">
+                                    </div>
+                                </div>
+                                <p class="mt-4 text-xs uppercase text-gray-400">Semi-Urban</p>
+                                <p class="text-xs text-gray-500">4.6 units</p>
+                            </div>
+
+                            <!-- RURAL -->
+                            <div class="flex flex-col items-center">
+                                <div class="relative w-16 h-56 bg-zinc-800 flex items-end">
+                                    <div class="bar w-full bg-white opacity-30"
+                                        data-value="11%"
+                                        style="height:0%">
+                                    </div>
+                                </div>
+                                <p class="mt-4 text-xs uppercase text-gray-400">Rural LMIC</p>
+                                <p class="text-xs text-gray-500">1.1 units</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="mt-4 text-xs text-gray-500 max-w-3xl">
+                    Source: WHO, World Bank, OECD Health Statistics (compiled estimates).
+                    Diagnostic units include lab access points, imaging availability,
+                    and trained screening capacity.
+                </p>
+
+            </div>
+        </div>
+
+        <!-- BOTTOM INSIGHT -->
+        <p class="mt-12 text-sm text-gray-400 italic max-w-4xl">
+            This inequality is not narrowing organically. Without infrastructure-level intervention,
+            rural healthcare systems remain locked into reactive, late-stage treatment cycles.
+        </p>
+
+        <div class="footer">
+            <span>P.A.N.D.A. · Global Context</span>
+            <span>Slide 03 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 4: THE RURAL DIAGNOSTIC CRISIS -->
+    <div class="slide" id="slide-4">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            04. The Rural Diagnostic Crisis
+        </h2>
+
+        <div class="grid grid-cols-2 gap-16 items-start">
+
+            <!-- LEFT: STRUCTURAL FAILURES -->
+            <div class="content-block space-y-10">
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    In rural healthcare systems, diagnostics are not delayed due to clinical complexity,
+                    but due to <strong>logistical breakdowns</strong>. The result is a system optimized
+                    for late-stage intervention rather than early detection.
+                </p>
+
+                <!-- Barrier 1 -->
+                <div class="border-l-2 border-white pl-6">
+                    <h4 class="text-lg font-bold mb-2">
+                        Geographic Friction
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Patients travel an average of <strong>40–60 km</strong> for basic diagnostics
+                        such as ECGs or blood panels. This distance results in a
+                        <strong>50–65% screening drop-off rate</strong> before diagnosis is ever made.
+                    </p>
+                </div>
+
+                <!-- Barrier 2 -->
+                <div class="border-l-2 border-white pl-6">
+                    <h4 class="text-lg font-bold mb-2">
+                        Economic Toxicity
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        A single diagnostic visit can cost up to
+                        <strong>two weeks of household income</strong>.
+                        Families delay testing until symptoms become severe — locking patients into
+                        irreversible disease trajectories.
+                    </p>
+                </div>
+
+                <!-- Barrier 3 -->
+                <div class="border-l-2 border-white pl-6">
+                    <h4 class="text-lg font-bold mb-2">
+                        Human Capital Shortage
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Rural clinics are staffed by frontline workers with limited diagnostic training.
+                        Specialist-dependent models fail because <strong>specialists simply do not exist
+                        at the last mile</strong>.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT: CLINICAL CONSEQUENCES -->
+            <div class="content-block bg-zinc-900 border border-zinc-800 p-10 space-y-10">
+
+                <p class="text-sm uppercase tracking-widest text-gray-500">
+                    Clinical Outcomes
+                </p>
+
+                <!-- Outcome 1 -->
+                <div class="flex items-start gap-6">
+                    <div class="text-5xl font-light text-white">85%</div>
+                    <p class="text-sm text-gray-400 leading-relaxed max-w-md">
+                        Of chronic and cardiovascular conditions in rural South Asia are
+                        <strong>diagnosed at irreversible or late stages</strong>,
+                        drastically reducing treatment efficacy.
+                    </p>
+                </div>
+
+                <!-- Outcome 2 -->
+                <div class="flex items-start gap-6">
+                    <div class="text-5xl font-light text-white">4×</div>
+                    <p class="text-sm text-gray-400 leading-relaxed max-w-md">
+                        Higher treatment costs when conditions progress from
+                        early-stage management to emergency hospitalization
+                        due to missed diagnostic windows.
+                    </p>
+                </div>
+
+                <!-- Quote -->
+                <div class="border-t border-zinc-700 pt-6 text-sm italic text-gray-400 leading-relaxed">
+                    “Late diagnosis is not a medical failure — it is a systems failure.
+                    Patients are treated when the system has already lost them.”
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BOTTOM INSIGHT -->
+        <p class="mt-12 text-sm text-gray-400 italic max-w-4xl">
+            Rural healthcare systems are trapped in a reactive loop: no diagnostics →
+            late presentation → higher mortality → rising system costs.
+            Breaking this loop requires diagnostics to move to the patient — not the other way around.
+        </p>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Problem Deep Dive</span>
+            <span>Slide 04 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 5: ECONOMIC & SOCIAL COST OF LATE DIAGNOSIS -->
+    <div class="slide" id="slide-5">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            05. Economic & Social Cost of Late Diagnosis
+        </h2>
+
+        <div class="grid grid-cols-3 gap-12 items-start">
+
+            <!-- COST 1 -->
+            <div class="content-block border-t-2 border-white pt-6 space-y-4">
+                <h3 class="text-lg font-bold">
+                    Macroeconomic Loss
+                </h3>
+                <p class="text-4xl font-light text-white">
+                    $1.2 Trillion
+                </p>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Estimated annual GDP loss across LMICs due to
+                    <strong>preventable and late-diagnosed diseases</strong>.
+                    Productivity loss from untreated cardiovascular, respiratory,
+                    and infectious diseases continues to suppress emerging-market growth.
+                </p>
+            </div>
+
+            <!-- COST 2 -->
+            <div class="content-block border-t-2 border-white pt-6 space-y-4" style="transition-delay: 0.15s;">
+                <h3 class="text-lg font-bold">
+                    Healthcare System Burden
+                </h3>
+                <p class="text-4xl font-light text-white">
+                    4× Higher Costs
+                </p>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Emergency and late-stage interventions cost governments
+                    <strong>3–5× more</strong> than early-stage diagnosis and outpatient care.
+                    Reactive healthcare models divert budgets away from prevention and infrastructure.
+                </p>
+            </div>
+
+            <!-- COST 3 -->
+            <div class="content-block border-t-2 border-white pt-6 space-y-4" style="transition-delay: 0.3s;">
+                <h3 class="text-lg font-bold">
+                    Household Poverty Impact
+                </h3>
+                <p class="text-4xl font-light text-white">
+                    100M+ People
+                </p>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Pushed into extreme poverty each year due to
+                    <strong>out-of-pocket medical expenses</strong>.
+                    Delayed diagnosis amplifies catastrophic spending, especially in rural households
+                    without insurance coverage.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- POLICY & INVESTOR INSIGHT -->
+        <div class="mt-14 grid grid-cols-2 gap-16">
+
+            <div class="content-block">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    Government Reality
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                    Ministries of Health are trapped in a fiscal paradox:
+                    rising healthcare spend with worsening outcomes.
+                    Without early diagnostics, national systems will continue to
+                    absorb exponential costs from preventable disease escalation.
+                </p>
+            </div>
+
+            <div class="content-block" style="transition-delay: 0.2s;">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    Investment Implication
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                    Any solution that shifts care from emergency treatment to
+                    <strong>early diagnosis</strong> delivers immediate ROI to governments,
+                    insurers, and health systems — creating strong willingness to pay
+                    for scalable diagnostic infrastructure.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- CLOSING LINE -->
+        <p class="mt-16 text-sm italic text-gray-400 max-w-4xl text-center justify-center mx-auto">
+            Late diagnosis is not just a health failure — it is a macroeconomic drag.
+            Fixing diagnostics is one of the highest-leverage interventions available
+            to emerging economies today.
+        </p>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Economic Context</span>
+            <span>Slide 05 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 6: CURRENT DIAGNOSTIC ECOSYSTEM -->
+    <div class="slide" id="slide-6">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            06. Current Diagnostic Ecosystem
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-4xl mb-12">
+            Modern healthcare diagnostics are designed around centralized infrastructure
+            and specialist availability. This architecture performs well in urban centers,
+            but collapses entirely when extended to rural and low-resource settings.
+        </p>
+
+        <!-- ECOSYSTEM TABLE -->
+        <div class="content-block">
+
+            <div class="grid grid-cols-5 gap-6 px-6 border-b border-white pb-4 text-xs uppercase tracking-widest text-gray-500">
+                <div>Tier</div>
+                <div>Diagnostic Model</div>
+                <div>Geographic Reach</div>
+                <div>Cost to Patient</div>
+            </div>
+
+            <!-- Tier 1 -->
+            <div class="grid grid-cols-5 gap-6 p-6 border-b border-zinc-800 text-sm">
+                <div class="font-bold">Tier 1</div>
+                <div>Centralized Labs & Hospitals</div>
+                <div>Urban Only</div>
+                <div>$40 – $150</div>
+            </div>
+
+            <!-- Tier 2 -->
+            <div class="grid grid-cols-5 gap-6 p-6 border-b border-zinc-800 text-sm">
+                <div class="font-bold">Tier 2</div>
+                <div>District Hospitals</div>
+                <div>Semi-Urban / Regional</div>
+                <div>$15 – $50</div>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="grid grid-cols-5 gap-6 p-6 border-b border-zinc-800 text-sm">
+                <div class="font-bold">Tier 3</div>
+                <div>Consumer Apps & Wearables</div>
+                <div>Individual Ownership</div>
+                <div>$200+ (device)</div>
+            </div>
+
+            <!-- Tier 0 -->
+            <div class="grid grid-cols-5 gap-6 p-6 text-sm bg-zinc-900 border-l-4 border-white">
+                <div class="font-bold">Tier 0</div>
+                <div class="font-bold">P.A.N.D.A.</div>
+                <div class="font-bold">Village-Level</div>
+                <div class="font-bold">$2 – $5</div>
+            </div>
+
+        </div>
+
+        <!-- SYSTEM FAILURE INSIGHT -->
+        <div class="mt-14 grid grid-cols-2 gap-16">
+
+            <div class="content-block">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    Core System Failure
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                    The global diagnostic ecosystem assumes patients can travel,
+                    pay upfront, and wait for results.
+                    This assumption breaks down completely at the last mile,
+                    leaving billions structurally excluded.
+                </p>
+            </div>
+
+            <div class="content-block" style="transition-delay: 0.2s;">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    Strategic Implication
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                    Any scalable solution must operate at <strong>Tier 0</strong> —
+                    embedded directly within rural communities,
+                    independent of specialists, labs, or connectivity.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · System Architecture</span>
+            <span>Slide 06 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 7: WHY EXISTING SOLUTIONS FAIL RURAL HEALTHCARE -->
+    <div class="slide" id="slide-7">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            07. Why Existing Solutions Fail Rural Healthcare
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-7xl mb-12">
+            Most diagnostic technologies are designed for environments with
+            reliable infrastructure, trained specialists, and continuous connectivity.
+            When deployed in rural LMIC settings, these assumptions collapse — resulting
+            in systematic failure rather than marginal underperformance.
+        </p>
+
+        <!-- FAILURE MODES -->
+        <div class="grid grid-cols-2 gap-16 items-start">
+
+            <!-- LEFT COLUMN -->
+            <div class="content-block space-y-10">
+
+                <!-- Failure 1 -->
+                <div class="border-l-2 border-white pl-6">
+                    <h4 class="text-lg font-bold mb-2">
+                        Connectivity Dependency
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Cloud-based AI diagnostics require real-time data transmission
+                        and server access. In regions where <strong>less than 25% of clinics
+                        have reliable broadband</strong>, these systems become unusable
+                        at the point of care.
+                    </p>
+                </div>
+
+                <!-- Failure 2 -->
+                <div class="border-l-2 border-white pl-6">
+                    <h4 class="text-lg font-bold mb-2">
+                        Environmental Fragility
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Western-designed medical devices assume climate-controlled
+                        facilities. Dust, heat above <strong>40°C</strong>, humidity,
+                        and unstable power supply rapidly degrade performance
+                        and shorten device lifespan in rural environments.
+                    </p>
+                </div>
+
+                <!-- Failure 3 -->
+                <div class="border-l-2 border-white pl-6">
+                    <h4 class="text-lg font-bold mb-2">
+                        High Operating Costs
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Consumables, reagents, calibration schedules, and cold-chain logistics
+                        introduce recurring operational costs that rural clinics
+                        and NGOs cannot sustainably absorb.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="content-block space-y-10" style="transition-delay: 0.2s;">
+
+                <!-- Failure 4 -->
+                <div class="border-l-2 border-white pl-6">
+                    <h4 class="text-lg font-bold mb-2">
+                        Specialist Interpretation Gap
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Many diagnostic tools output raw signals or probability scores.
+                        Without trained physicians to interpret results,
+                        <strong>data does not translate into clinical action</strong>
+                        at the last mile.
+                    </p>
+                </div>
+
+                <!-- Failure 5 -->
+                <div class="border-l-2 border-white pl-6">
+                    <h4 class="text-lg font-bold mb-2">
+                        Adoption & Trust Barriers
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Software-only solutions lack physical presence and clinical legitimacy.
+                        Patients and frontline workers place greater trust in
+                        tangible medical devices than abstract mobile applications.
+                    </p>
+                </div>
+
+                <!-- Failure 6 -->
+                <div class="border-l-2 border-white pl-6">
+                    <h4 class="text-lg font-bold mb-2">
+                        Pilot-to-Scale Failure
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Many MedTech pilots succeed under controlled conditions
+                        but fail at scale due to training overhead,
+                        maintenance complexity, and lack of local ownership.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- STRATEGIC INSIGHT -->
+        <div class="mt-10 grid grid-cols-2 gap-16">
+
+            <div class="content-block">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    Structural Reality
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                    The failure of existing solutions is not due to poor technology,
+                    but due to a fundamental mismatch between design assumptions
+                    and real-world rural operating conditions.
+                </p>
+            </div>
+
+            <div class="content-block" style="transition-delay: 0.2s;">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    Strategic Consequence
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                    Any solution that depends on connectivity, specialists,
+                    or complex supply chains will remain structurally excluded
+                    from rural healthcare delivery.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Market Failure Analysis</span>
+            <span>Slide 07 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 8: OPPORTUNITY GAP ANALYSIS -->
+    <div class="slide" id="slide-8">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            08. Opportunity Gap Analysis
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-6xl mb-12">
+            Existing diagnostic solutions cluster around infrastructure-heavy,
+            high-cost models or low-accuracy consumer tools.
+            The rural healthcare market remains structurally underserved
+            at the intersection of affordability, accuracy, and accessibility.
+        </p>
+
+        <!-- 2x2 MATRIX -->
+        <div class="content-block flex justify-center">
+
+            <div class="grid grid-cols-2 grid-rows-2 w-full max-w-5xl h-96 border border-white">
+
+                <!-- Top Left -->
+                <div class="flex flex-col justify-center items-center border-r border-b border-zinc-800 p-8">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">
+                        High Cost · High Accuracy
+                    </p>
+                    <p class="text-sm font-bold text-gray-300 text-center">
+                        Centralized Labs<br>Hospital Imaging
+                    </p>
+                </div>
+
+                <!-- Top Right (TARGET) -->
+                <div class="flex flex-col justify-center items-center border-b border-zinc-800 p-8 bg-white text-black">
+                    <p class="text-xs uppercase tracking-widest font-bold mb-2">
+                        Low Cost · High Accuracy
+                    </p>
+                    <p class="text-3xl font-black text-center">
+                        P.A.N.D.A.
+                    </p>
+                    <p class="text-xs mt-3 text-center max-w-xs">
+                        Offline · Frontline-operated · Diagnostic intelligence
+                    </p>
+                </div>
+
+                <!-- Bottom Left -->
+                <div class="flex flex-col justify-center items-center border-r border-zinc-800 p-8">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">
+                        High Cost · Low Utility
+                    </p>
+                    <p class="text-sm font-bold text-gray-300 text-center">
+                        Failed MedTech Pilots<br>Overengineered Devices
+                    </p>
+                </div>
+
+                <!-- Bottom Right -->
+                <div class="flex flex-col justify-center items-center p-8">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">
+                        Low Cost · Low Accuracy
+                    </p>
+                    <p class="text-sm font-bold text-gray-300 text-center">
+                        Consumer Apps<br>Basic Wearables
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- AXIS LABELS -->
+        <div class="mt-6 flex justify-between max-w-5xl mx-auto text-xs uppercase tracking-widest text-gray-500">
+            <span>← Lower Diagnostic Accuracy</span>
+            <span>Higher Diagnostic Accuracy →</span>
+        </div>
+
+        <div class="mt-2 flex justify-between max-w-5xl mx-auto text-xs uppercase tracking-widest text-gray-500">
+            <span>← Higher Cost</span>
+            <span>Lower Cost →</span>
+        </div>
+
+        <!-- INSIGHT -->
+        <p class="mt-8 text-center justify-center text-sm italic text-gray-400 max-w-4xl mx-auto">
+            The market gap is not incremental — it is categorical.
+            No incumbent operates sustainably in the low-cost,
+            high-accuracy quadrant at the rural last mile.
+        </p>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Opportunity Mapping</span>
+            <span>Slide 08 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 9: INTRODUCING P.A.N.D.A. -->
+    <div class="slide" id="slide-9">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            09. Introducing P.A.N.D.A.
+        </h2>
+
+        <div class="grid grid-cols-2 gap-16 items-center">
+
+            <!-- LEFT: SOLUTION NARRATIVE -->
+            <div class="content-block space-y-8">
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    P.A.N.D.A. (Predictive Analytic Network for Diagnostic Assistance)
+                    is a purpose-built diagnostic intelligence platform designed
+                    from first principles for rural and low-resource healthcare environments.
+                </p>
+
+                <div class="border-l-2 border-white pl-6">
+                    <h4 class="text-xl font-bold mb-2">
+                        A “Lab-in-a-Box” for the Last Mile
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        P.A.N.D.A. compresses the functional capabilities of
+                        a basic diagnostic laboratory into a single ruggedized,
+                        handheld device — operable by frontline health workers,
+                        without specialists, connectivity, or supporting infrastructure.
+                    </p>
+                </div>
+
+                <div class="border-l-2 border-white pl-6">
+                    <h4 class="text-xl font-bold mb-2">
+                        Offline-First Diagnostic Intelligence
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        All diagnostic inference runs directly on-device using
+                        low-power Edge AI. Clinical decisions are generated
+                        instantly at the point of care — not in the cloud.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT: PRODUCT SUMMARY -->
+            <div class="content-block bg-zinc-900 border border-zinc-800 p-10 space-y-8">
+
+                <p class="text-sm uppercase tracking-widest text-gray-500">
+                    Platform Overview
+                </p>
+
+                <div class="space-y-4 text-sm text-gray-300">
+                    <div class="flex justify-between border-b border-zinc-800 pb-2">
+                        <span>Form Factor</span>
+                        <span>Handheld, Ruggedized (IP-rated)</span>
+                    </div>
+                    <div class="flex justify-between border-b border-zinc-800 pb-2">
+                        <span>Compute</span>
+                        <span>On-device Edge AI (offline)</span>
+                    </div>
+                    <div class="flex justify-between border-b border-zinc-800 pb-2">
+                        <span>Primary Users</span>
+                        <span>Frontline health workers</span>
+                    </div>
+                    <div class="flex justify-between border-b border-zinc-800 pb-2">
+                        <span>Time to Result</span>
+                        <span>&lt; 5 minutes</span>
+                    </div>
+                    <div class="flex justify-between pb-2">
+                        <span>Connectivity</span>
+                        <span>Optional (sync-only)</span>
+                    </div>
+                </div>
+
+                <div class="border-t border-zinc-800 pt-6">
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Designed to operate reliably in environments with
+                        unstable power, extreme heat, dust exposure,
+                        and zero network coverage.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- POSITIONING STATEMENT -->
+        <p class="mt-16 text-sm italic text-gray-400 max-w-4xl justify-center mx-auto">
+            P.A.N.D.A. is not a diagnostic device adapted for rural use —
+            it is a rural diagnostic system engineered from the ground up.
+        </p>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Solution Overview</span>
+            <span>Slide 09 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 10: PRODUCT CAPABILITIES -->
+    <div class="slide" id="slide-10">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            10. Product Capabilities
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-4xl mb-12">
+            P.A.N.D.A. delivers clinically relevant diagnostic intelligence
+            across high-burden disease categories, enabling early detection,
+            triage, and referral at the point of care.
+        </p>
+
+        <!-- CAPABILITY GRID -->
+        <div class="grid grid-cols-4 gap-6 content-block">
+
+            <!-- Cardiology -->
+            <div class="border border-zinc-800 p-6 space-y-4 hover:border-white transition">
+                <h4 class="text-lg font-bold">
+                    Cardiology
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Detection of arrhythmias, atrial fibrillation, and early
+                    congestive heart failure using multi-lead ECG equivalents
+                    and signal-quality validation.
+                </p>
+                <p class="text-xs uppercase tracking-widest text-gray-500">
+                    ECG · HRV · Rhythm Analysis
+                </p>
+            </div>
+
+            <!-- Pulmonology -->
+            <div class="border border-zinc-800 p-6 space-y-4 hover:border-white transition">
+                <h4 class="text-lg font-bold">
+                    Pulmonology
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    AI-driven lung sound analysis for pneumonia, COPD,
+                    and respiratory distress triage using digital auscultation.
+                </p>
+                <p class="text-xs uppercase tracking-widest text-gray-500">
+                    Acoustic AI · RR · SpO₂
+                </p>
+            </div>
+
+            <!-- Infectious Disease -->
+            <div class="border border-zinc-800 p-6 space-y-4 hover:border-white transition">
+                <h4 class="text-lg font-bold">
+                    Infectious Disease
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Symptom-cluster and vitals correlation for early referral
+                    of malaria, dengue, tuberculosis, and febrile illnesses.
+                </p>
+                <p class="text-xs uppercase tracking-widest text-gray-500">
+                    Risk Stratification · Triage
+                </p>
+            </div>
+
+            <!-- Maternal Health -->
+            <div class="border border-zinc-800 p-6 space-y-4 hover:border-white transition">
+                <h4 class="text-lg font-bold">
+                    Maternal Health
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Monitoring of blood pressure, oxygen saturation,
+                    and warning signs for preeclampsia and maternal distress.
+                </p>
+                <p class="text-xs uppercase tracking-widest text-gray-500">
+                    BP · SpO₂ · Risk Alerts
+                </p>
+            </div>
+
+        </div>
+
+        <!-- CLINICAL PERFORMANCE -->
+        <div class="mt-14 grid grid-cols-2 gap-16 items-start">
+
+            <div class="content-block">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    Clinical Performance
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                    In controlled pilot evaluations, P.A.N.D.A. demonstrated
+                    <strong>94%+ diagnostic sensitivity</strong> when benchmarked
+                    against Tier-1 hospital diagnostic equipment across
+                    cardiopulmonary screening use cases.
+                </p>
+            </div>
+
+            <div class="content-block" style="transition-delay: 0.2s;">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    Operational Advantage
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                    End-to-end diagnostic workflows complete in under
+                    <strong>5 minutes</strong>, enabling same-visit clinical
+                    decisions and dramatically reducing patient drop-off.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- DISCLAIMER -->
+        <p class="mt-12 text-xs text-gray-500 italic max-w-4xl justify-center mx-auto">
+            Performance metrics based on early pilot deployments and controlled evaluations;
+            full clinical validation ongoing as part of regulatory approval pathways.
+        </p>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Clinical Capabilities</span>
+            <span>Slide 10 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 11: SYSTEM ARCHITECTURE -->
+    <div class="slide" id="slide-11">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            11. System Architecture
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-4xl mb-12">
+            P.A.N.D.A. is architected as a fully self-contained diagnostic system,
+            designed to operate independently of connectivity, specialists,
+            and centralized infrastructure — while still enabling data aggregation
+            when networks are available.
+        </p>
+
+        <!-- ARCHITECTURE FLOW -->
+        <div class="content-block flex justify-center">
+
+            <div class="flex items-center gap-8 w-full max-w-6xl">
+
+                <!-- INPUT -->
+                <div class="flex-1 border border-white p-8 text-center">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">
+                        Input Layer
+                    </p>
+                    <p class="text-lg font-bold">
+                        Multi-Modal Sensors
+                    </p>
+                    <p class="mt-3 text-sm text-gray-400 leading-relaxed">
+                        ECG · SpO₂ · Temperature · Respiratory Acoustics · BP
+                    </p>
+                </div>
+
+                <!-- ARROW -->
+                <div class="text-3xl opacity-40">→</div>
+
+                <!-- PROCESS -->
+                <div class="flex-1 bg-white text-black p-8 text-center">
+                    <p class="text-xs uppercase tracking-widest mb-2">
+                        Processing Layer
+                    </p>
+                    <p class="text-xl font-black">
+                        On-Device Edge AI
+                    </p>
+                    <p class="mt-3 text-sm leading-relaxed">
+                        Signal validation · Sensor fusion · Risk inference
+                    </p>
+                    <p class="mt-2 text-xs opacity-70">
+                        Low-power neural inference · Offline execution
+                    </p>
+                </div>
+
+                <!-- ARROW -->
+                <div class="text-3xl opacity-40">→</div>
+
+                <!-- OUTPUT -->
+                <div class="flex-1 border border-white p-8 text-center">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">
+                        Output Layer
+                    </p>
+                    <p class="text-lg font-bold">
+                        Clinical Decision Support
+                    </p>
+                    <p class="mt-3 text-sm text-gray-400 leading-relaxed">
+                        Risk score · Triage category · Referral guidance
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- DATA & SYNC -->
+        <div class="mt-14 grid grid-cols-2 gap-16 items-start">
+
+            <div class="content-block">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    Offline-First by Design
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                    All diagnostic computation and decision logic
+                    executes locally on the device.
+                    No network connectivity is required at the point of care,
+                    ensuring uninterrupted operation in rural environments.
+                </p>
+            </div>
+
+            <div class="content-block" style="transition-delay: 0.2s;">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    Optional Data Synchronization
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                    When connectivity becomes available, encrypted and anonymized
+                    diagnostic summaries sync to the P.A.N.D.A. Health Cloud,
+                    enabling population-level analytics and epidemiological insights.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- CLOSING LINE -->
+        <p class="mt-12 text-sm italic text-gray-400 max-w-4xl justify-center mx-auto">
+            This architecture ensures diagnostic intelligence is available
+            exactly where it is needed — not where infrastructure happens to exist.
+        </p>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · System Architecture</span>
+            <span>Slide 11 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 12: END-TO-END USER WORKFLOW -->
+    <div class="slide" id="slide-12">
+
+        <h2 class="text-3xl font-bold mb-6 uppercase">
+            12. End-to-End User Workflow
+        </h2>
+
+        <p class="text-base text-gray-300 leading-relaxed max-w-4xl mb-8">
+            A complete diagnostic cycle executed by a frontline health worker
+            in a single visit — without specialists or connectivity.
+        </p>
+
+        <!-- WORKFLOW STEPS -->
+        <div class="content-block space-y-8 max-w-5xl gap-4">
+
+            <!-- STEP 1 -->
+            <div class="flex items-start gap-6 border-b border-zinc-800 pb-3">
+                <div class="text-4xl font-light opacity-30">01</div>
+                <div>
+                    <h4 class="text-base font-bold mb-1">Patient Intake</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Icon-based registration and symptom capture in under one minute.
+                    </p>
+                </div>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="flex items-start gap-6 border-b border-zinc-800 pb-3">
+                <div class="text-4xl font-light opacity-30">02</div>
+                <div>
+                    <h4 class="text-base font-bold mb-1">Guided Data Capture</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        AI-assisted sensor placement with automatic signal validation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- STEP 3 -->
+            <div class="flex items-start gap-6 border-b border-zinc-800 pb-3">
+                <div class="text-4xl font-light opacity-30">03</div>
+                <div>
+                    <h4 class="text-base font-bold mb-1">Instant Inference</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        On-device Edge AI generates risk scores in seconds.
+                    </p>
+                </div>
+            </div>
+
+            <!-- STEP 4 -->
+            <div class="flex items-start gap-6 border-b border-zinc-800 pb-3">
+                <div class="text-4xl font-light opacity-30">04</div>
+                <div>
+                    <h4 class="text-base font-bold mb-1">Clinical Triage</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Clear Green / Yellow / Red decision output for action.
+                    </p>
+                </div>
+            </div>
+
+            <!-- STEP 5 -->
+            <div class="flex items-start gap-6">
+                <div class="text-4xl font-light opacity-30">05</div>
+                <div>
+                    <h4 class="text-base font-bold mb-1">Referral & Record</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Local report generated; secure sync when connectivity exists.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- METRICS ROW -->
+        <div class="mt-8 grid grid-cols-3 gap-10 max-w-4xl">
+
+            <div class="content-block">
+                <p class="text-2xl font-light">&lt; 5 min</p>
+                <p class="text-[10px] uppercase tracking-widest text-gray-500">
+                    Per Patient
+                </p>
+            </div>
+
+            <div class="content-block" style="transition-delay: 0.15s;">
+                <p class="text-2xl font-light">1 Worker</p>
+                <p class="text-[10px] uppercase tracking-widest text-gray-500">
+                    Required
+                </p>
+            </div>
+
+            <div class="content-block" style="transition-delay: 0.3s;">
+                <p class="text-2xl font-light">0 Specialists</p>
+                <p class="text-[10px] uppercase tracking-widest text-gray-500">
+                    On-Site
+                </p>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Operational Workflow</span>
+            <span>Slide 12 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 13: TECHNOLOGY & IP STRATEGY -->
+    <div class="slide" id="slide-13">
+
+        <h2 class="text-4xl font-bold mb-12 uppercase">
+            13. Technology & IP Strategy
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-6xl mb-14">
+            P.A.N.D.A.’s competitive advantage is anchored in proprietary
+            edge-based artificial intelligence, multimodal sensor fusion,
+            and a continuously expanding rural clinical data moat —
+            creating long-term defensibility beyond software-only solutions.
+        </p>
+
+        <!-- MAIN CONTENT -->
+        <div class="grid grid-cols-2 gap-16 items-start content-block">
+
+            <!-- LEFT: IP & MOAT -->
+            <div class="space-y-10">
+
+                <div class="border-l-2 border-white pl-6">
+                    <h4 class="text-xl font-bold mb-3">
+                        Edge AI Optimization
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                        Proprietary neural compression and inference pipelines
+                        enable hospital-grade diagnostic models to run fully offline
+                        on low-power embedded hardware, consuming less than
+                        <strong>2 watts</strong> during active inference.
+                    </p>
+                </div>
+
+                <div class="border-l-2 border-white pl-6">
+                    <h4 class="text-xl font-bold mb-3">
+                        Multimodal Sensor Fusion
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                        P.A.N.D.A. integrates ECG, acoustic signals, oxygen saturation,
+                        blood pressure, and temperature into a unified inference layer.
+                        Cross-signal correlation improves diagnostic sensitivity
+                        compared to single-modality systems.
+                    </p>
+                </div>
+
+                <div class="border-l-2 border-white pl-6">
+                    <h4 class="text-xl font-bold mb-3">
+                        Proprietary Rural Clinical Dataset
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                        Our models are trained on <strong>150,000+ anonymized patient records</strong>
+                        sourced from rural South Asian populations — a demographic
+                        significantly underrepresented in existing medical AI datasets.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT: TECH STACK VISUAL -->
+            <div class="bg-zinc-900 border border-zinc-800 p-10">
+
+                <p class="text-sm uppercase tracking-widest text-gray-500 mb-6">
+                    Core Technology Stack
+                </p>
+
+                <div class="font-mono text-sm text-green-500 space-y-2 leading-relaxed">
+                    <p>&gt; initialize_edge_engine(panda_v4)</p>
+                    <p>&gt; signal_validation ........ OK</p>
+                    <p>&gt; sensor_fusion ............ ACTIVE</p>
+                    <p>&gt; inference_latency ........ 14ms</p>
+                    <p>&gt; power_draw ............... 1.9W</p>
+                    <p>&gt; encryption ............... AES-256</p>
+                    <p>&gt; connectivity ............. OFFLINE</p>
+                </div>
+
+                <p class="mt-6 text-sm text-gray-400 leading-relaxed">
+                    The system is engineered for reliability in environments
+                    characterized by unstable power supply, extreme temperatures,
+                    and intermittent or nonexistent network connectivity.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- CLOSING LINE -->
+        <p class="mt-14 text-sm italic text-gray-400 max-w-4xl justify-center mx-auto">
+            P.A.N.D.A.’s moat is not a single breakthrough,
+            but a compounding system of technology, data, and deployment.
+        </p>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Technology & IP Strategy</span>
+            <span>Slide 13 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 14: UNIQUE VALUE PROPOSITION -->
+    <div class="slide" id="slide-14">
+
+        <h2 class="text-4xl font-bold mb-12 uppercase">
+            14. Unique Value Proposition
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-6xl mb-14">
+            P.A.N.D.A. delivers diagnostic intelligence where traditional healthcare
+            systems structurally fail — combining clinical-grade accuracy,
+            extreme affordability, and infrastructure independence into a single platform.
+        </p>
+
+        <!-- VALUE PILLARS -->
+        <div class="grid grid-cols-3 gap-12 content-block">
+
+            <!-- Reliability -->
+            <div class="border border-zinc-800 p-10">
+                <h3 class="text-2xl font-black mb-4 uppercase">
+                    Reliability
+                </h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    Designed for harsh rural conditions where power,
+                    connectivity, and climate control are unreliable or nonexistent.
+                </p>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li>• Fully offline operation</li>
+                    <li>• Heat, dust, and humidity tolerant</li>
+                    <li>• No dependency on cloud uptime</li>
+                </ul>
+            </div>
+
+            <!-- Empowerment -->
+            <div class="border border-zinc-800 p-10 bg-zinc-900">
+                <h3 class="text-2xl font-black mb-4 uppercase">
+                    Empowerment
+                </h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    Transforms frontline health workers into effective
+                    diagnostic decision-makers without years of medical training.
+                </p>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li>• Guided workflows and AI validation</li>
+                    <li>• No specialist interpretation required</li>
+                    <li>• Clear, actionable triage outputs</li>
+                </ul>
+            </div>
+
+            <!-- Velocity -->
+            <div class="border border-zinc-800 p-10">
+                <h3 class="text-2xl font-black mb-4 uppercase">
+                    Velocity
+                </h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    Compresses diagnosis-to-decision timelines from days or weeks
+                    into minutes — at the point of care.
+                </p>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li>• &lt; 5 minutes per patient</li>
+                    <li>• Same-visit clinical decisions</li>
+                    <li>• Reduced patient drop-off rates</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- DIFFERENTIATION STATEMENT -->
+        <div class="mt-10 grid grid-cols-2 gap-16 items-start">
+
+            <div class="content-block">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    What We Replace
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                    Fragmented diagnostics, delayed referrals,
+                    infrastructure-heavy lab models, and cloud-dependent AI tools
+                    that cannot function reliably in rural settings.
+                </p>
+            </div>
+
+            <div class="content-block" style="transition-delay: 0.2s;">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    What We Enable
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                    A new diagnostic baseline where early detection,
+                    triage, and referral are embedded directly
+                    into frontline healthcare delivery.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- CLOSING LINE -->
+        <p class="mt-8 text-sm italic text-gray-400 max-w-4xl justify-center mx-auto">
+            P.A.N.D.A.’s advantage is not incremental improvement —
+            it is a structural redefinition of how diagnostics reach the last mile.
+        </p>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Value Proposition</span>
+            <span>Slide 14 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 15: TARGET MARKET SEGMENTATION -->
+    <div class="slide" id="slide-15">
+
+        <h2 class="text-4xl font-bold mb-12 uppercase">
+            15. Target Market Segmentation
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-7xl mb-10">
+            P.A.N.D.A. serves institutional healthcare buyers responsible for
+            large-scale delivery of primary care services in resource-constrained
+            environments. Our go-to-market strategy prioritizes entities with
+            budget authority, deployment capacity, and long-term incentives
+            aligned with early diagnosis and cost reduction.
+        </p>
+
+        <!-- SEGMENTATION GRID -->
+        <div class="grid grid-cols-3 gap-14 content-block">
+
+            <!-- Governments -->
+            <div class="border border-zinc-800 p-6">
+                <h3 class="text-2xl font-black mb-4 uppercase">
+                    Governments (B2G)
+                </h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    National and regional ministries of health responsible
+                    for rural healthcare delivery, disease surveillance,
+                    and public health outcomes.
+                </p>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li>• National Rural Health Missions</li>
+                    <li>• Primary Health Center (PHC) networks</li>
+                    <li>• Large-scale procurement tenders</li>
+                    <li>• Long-term contracts and renewals</li>
+                </ul>
+            </div>
+
+            <!-- NGOs -->
+            <div class="border border-zinc-800 p-6 bg-zinc-900">
+                <h3 class="text-2xl font-black mb-4 uppercase">
+                    NGOs & Multilaterals
+                </h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    International and regional organizations operating
+                    frontline healthcare programs in rural, conflict,
+                    and humanitarian settings.
+                </p>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li>• UNICEF, WHO, Red Cross programs</li>
+                    <li>• Maternal & child health initiatives</li>
+                    <li>• Disaster response deployments</li>
+                    <li>• Grant-backed scaling programs</li>
+                </ul>
+            </div>
+
+            <!-- Private Clinics -->
+            <div class="border border-zinc-800 p-6">
+                <h3 class="text-2xl font-black mb-4 uppercase">
+                    Private Clinics & Networks
+                </h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    Last-mile clinics, pharmacy chains, and diagnostic
+                    micro-networks seeking to offer affordable
+                    point-of-care screening services.
+                </p>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li>• Rural and semi-urban clinics</li>
+                    <li>• Franchise healthcare networks</li>
+                    <li>• Pay-per-use diagnostic models</li>
+                    <li>• Rapid adoption cycles</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- BUYER VS USER CLARITY -->
+        <div class="mt-10 grid grid-cols-2 gap-16 items-start">
+
+            <div class="content-block">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    Economic Buyer
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                    Governments, NGOs, and institutional healthcare providers
+                    that control procurement budgets, deployment decisions,
+                    and long-term operational funding.
+                </p>
+            </div>
+
+            <div class="content-block" style="transition-delay: 0.2s;">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    End User
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                    Frontline health workers, nurses, and community health
+                    officers responsible for patient intake, screening,
+                    and referral at the point of care.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Market Segmentation</span>
+            <span>Slide 15 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 16: MARKET OPPORTUNITY (TAM / SAM / SOM) -->
+    <div class="slide" id="slide-16">
+
+        <h2 class="text-4xl font-bold mb-12 uppercase">
+            16. Market Opportunity
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-6xl mb-8">
+            P.A.N.D.A. operates at the intersection of global diagnostics,
+            medical devices, and applied artificial intelligence. Our market
+            sizing focuses on realistic, institutionally addressable demand
+            within rural and low-resource healthcare systems.
+        </p>
+
+        <!-- MARKET STACK -->
+        <div class="space-y-8 max-w-7xl content-block">
+
+            <!-- TAM -->
+            <div class="border border-zinc-800 p-4">
+                <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-3">
+                    Total Addressable Market (TAM)
+                </h3>
+                <div class="flex justify-between items-end mb-4">
+                    <h4 class="text-3xl font-black">
+                        Global AI Diagnostics Market
+                    </h4>
+                    <span class="text-3xl font-black">
+                        $22.5B
+                    </span>
+                </div>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-6xl">
+                    Includes AI-powered diagnostic software, point-of-care
+                    medical devices, and clinical decision support systems
+                    across both developed and emerging markets.
+                </p>
+            </div>
+
+            <!-- SAM -->
+            <div class="border border-zinc-800 p-4 bg-zinc-900 ml-12">
+                <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-3">
+                    Serviceable Addressable Market (SAM)
+                </h3>
+                <div class="flex justify-between items-end mb-4">
+                    <h4 class="text-3xl font-black">
+                        Rural LMIC Diagnostic Infrastructure
+                    </h4>
+                    <span class="text-3xl font-black">
+                        $4.8B
+                    </span>
+                </div>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-7xl">
+                    Represents diagnostics spending by governments, NGOs,
+                    and private providers across South Asia and Sub-Saharan
+                    Africa — regions with the highest unmet diagnostic demand.
+                </p>
+            </div>
+
+            <!-- SOM -->
+            <div class="border border-white p-4 ml-24 bg-white text-black">
+                <h3 class="text-sm uppercase tracking-widest mb-3 opacity-70">
+                    Serviceable Obtainable Market (SOM)
+                </h3>
+                <div class="flex justify-between items-end mb-4">
+                    <h4 class="text-3xl font-black italic">
+                        Initial Target (2028)
+                    </h4>
+                    <span class="text-3xl font-black">
+                        $650M
+                    </span>
+                </div>
+                <p class="text-sm leading-relaxed max-w-6xl">
+                    Based on conservative penetration of government programs,
+                    NGO deployments, and private clinic networks within
+                    India and Pakistan during the first scaling phase.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Market Opportunity</span>
+            <span>Slide 16 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 17: COMPETITIVE LANDSCAPE (FIXED GRAPH) -->
+    <div class="slide" id="slide-17">
+
+        <h2 class="text-4xl font-bold mb-12 uppercase">
+            17. Competitive Landscape
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-6xl mb-12">
+            The diagnostic technology market clusters around either
+            high-resource hospital environments or consumer-grade tools.
+            P.A.N.D.A. uniquely occupies the high-accuracy, offline-capable
+            quadrant required for rural healthcare systems.
+        </p>
+
+        <div class="grid grid-cols-2 gap-16 items-center">
+
+            <!-- GRAPH -->
+            <div class="content-block">
+
+                <!-- GRAPH FRAME -->
+                <div class="relative w-full h-[420px] border border-zinc-800 p-10">
+
+                    <!-- AXES -->
+                    <div class="absolute left-12 top-10 bottom-14 w-px bg-zinc-700"></div>
+                    <div class="absolute left-12 right-10 bottom-14 h-px bg-zinc-700"></div>
+
+                    <!-- AXIS LABELS -->
+                    <div class="absolute -left-16 top-1/2 -rotate-90 text-xs uppercase tracking-widest text-gray-500">
+                        Diagnostic Accuracy →
+                    </div>
+
+                    <div class="absolute bottom-4 right-56 text-xs uppercase tracking-widest text-gray-500">
+                        Connectivity Independence →
+                    </div>
+
+                    <!-- SCALE LABELS -->
+                    <span class="absolute top-12 left-16 text-xs text-gray-600">High</span>
+                    <span class="absolute bottom-20 left-16 text-xs text-gray-600">Low</span>
+                    <span class="absolute bottom-8 left-20 text-xs text-gray-600">Cloud</span>
+                    <span class="absolute bottom-8 right-20 text-xs text-gray-600">Offline</span>
+
+                    <!-- PLOT AREA -->
+                    <div class="absolute left-12 right-10 top-10 bottom-14">
+
+                        <!-- Hospital Labs -->
+                        <div class="graph-dot"
+                            data-x="15" data-y="85">
+                            <div class="dot"></div>
+                            <span>Hospital Labs</span>
+                        </div>
+
+                        <!-- Portable Labs -->
+                        <div class="graph-dot"
+                            data-x="45" data-y="55">
+                            <div class="dot gray"></div>
+                            <span>Portable Labs</span>
+                        </div>
+
+                        <!-- Smartphone Apps -->
+                        <div class="graph-dot"
+                            data-x="30" data-y="20">
+                            <div class="dot dim"></div>
+                            <span>Smartphone Apps</span>
+                        </div>
+
+                        <!-- P.A.N.D.A. -->
+                        <div class="graph-dot panda"
+                            data-x="75" data-y="80">
+                            <div class="dot panda-dot"></div>
+                            <span>P.A.N.D.A.</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- INSIGHT -->
+            <div class="content-block space-y-8">
+
+                <div>
+                    <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-2">
+                        Structural Gap
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Existing solutions either require continuous connectivity
+                        or sacrifice diagnostic accuracy. None are designed for
+                        frontline rural environments.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-2">
+                        P.A.N.D.A. Positioning
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        P.A.N.D.A. delivers hospital-grade intelligence without
+                        hospitals, specialists, or connectivity — a category
+                        incumbents cannot easily enter.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="mt-14 text-sm italic text-gray-400 max-w-4xl justify-center mx-auto">
+            P.A.N.D.A. does not compete on convenience — it competes on
+            infrastructure relevance.
+        </p>
+
+        <div class="footer">
+            <span>P.A.N.D.A. · Competitive Landscape</span>
+            <span>Slide 17 / 30</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 18: BUSINESS MODEL (ENHANCED VISUAL) -->
+    <div class="slide" id="slide-18">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            18. Business Model Architecture
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-5xl mb-14">
+            P.A.N.D.A. operates as a multi-layered diagnostic infrastructure platform,
+            monetizing hardware deployment through recurring intelligence, service,
+            and data-driven revenue streams aligned with public health systems.
+        </p>
+
+        <!-- MODEL STACK -->
+        <div class="grid grid-cols-4 gap-0 border border-zinc-800">
+
+            <!-- HARDWARE -->
+            <div class="p-10 border-r border-zinc-800 hover:bg-zinc-900">
+                <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    Layer 01
+                </h3>
+                <h4 class="text-xl font-bold mb-4">
+                    Hardware Deployment
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    Ruggedized diagnostic hubs sold or leased to governments,
+                    NGOs, and rural clinic networks through centralized
+                    procurement and district-level tenders.
+                </p>
+                <ul class="text-sm text-gray-400 space-y-3">
+                    <li>• One-time sale or 3–5 year leasing</li>
+                    <li>• 250–1,000 devices per district</li>
+                    <li>• 5+ year field lifespan</li>
+                </ul>
+            </div>
+
+            <!-- SOFTWARE -->
+            <div class="p-10 border-r border-zinc-800 hover:bg-zinc-900">
+                <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    Layer 02
+                </h3>
+                <h4 class="text-xl font-bold mb-4">
+                    AI & Software Subscriptions
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    Recurring per-device subscriptions unlock continuous
+                    AI model updates, diagnostic modules, regulatory
+                    compliance, and analytics dashboards.
+                </p>
+                <ul class="text-sm text-gray-400 space-y-3">
+                    <li>• Monthly recurring revenue (MRR)</li>
+                    <li>• Tiered diagnostic modules</li>
+                    <li>• High-margin software layer</li>
+                </ul>
+            </div>
+
+            <!-- SERVICES -->
+            <div class="p-10 border-r border-zinc-800 hover:bg-zinc-900">
+                <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    Layer 03
+                </h3>
+                <h4 class="text-xl font-bold mb-4">
+                    Services & Maintenance
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    Mission-critical healthcare infrastructure requires
+                    long-term support, training, calibration, and
+                    lifecycle management.
+                </p>
+                <ul class="text-sm text-gray-400 space-y-3">
+                    <li>• Annual maintenance contracts</li>
+                    <li>• Local service partners</li>
+                    <li>• Predictable recurring cash flow</li>
+                </ul>
+            </div>
+
+            <!-- DATA -->
+            <div class="p-10 hover:bg-zinc-900">
+                <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    Layer 04
+                </h3>
+                <h4 class="text-xl font-bold mb-4">
+                    Data & Intelligence Layer
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    Aggregated, anonymized diagnostic data forms a
+                    population-scale intelligence layer for policy,
+                    outbreak forecasting, and pharmaceutical research.
+                </p>
+                <ul class="text-sm text-gray-400 space-y-3">
+                    <li>• Epidemiological insights</li>
+                    <li>• Health system planning</li>
+                    <li>• Long-term strategic upside</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- VALUE STATEMENT -->
+        <div class="mt-14 max-w-5xl text-sm text-gray-400 italic justify-center mx-auto text-center">
+            This layered model transforms P.A.N.D.A. from a medical device company
+            into a national diagnostic infrastructure partner — embedding
+            long-term contracts, recurring revenue, and systemic lock-in.
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Business Model Architecture</span>
+            <span>Slide 18 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 19: PRICING & UNIT ECONOMICS -->
+    <div class="slide" id="slide-19">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            19. Pricing & Unit Economics
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-5xl mb-14">
+            P.A.N.D.A. is engineered for high-margin scalability. Unit economics improve
+            materially with volume, while recurring software and services revenue
+            compound lifetime value per deployed device.
+        </p>
+
+        <div class="grid grid-cols-2 gap-16">
+
+            <!-- LEFT: COST STRUCTURE -->
+            <div class="content-block">
+
+                <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-6">
+                    Per-Device Cost Structure (COGS)
+                </h3>
+
+                <div class="space-y-4 text-sm text-gray-400">
+
+                    <div class="flex justify-between border-b border-zinc-800 pb-2">
+                        <span>Core Electronics & Sensors</span>
+                        <span>$95</span>
+                    </div>
+
+                    <div class="flex justify-between border-b border-zinc-800 pb-2">
+                        <span>Edge Compute Module</span>
+                        <span>$35</span>
+                    </div>
+
+                    <div class="flex justify-between border-b border-zinc-800 pb-2">
+                        <span>Enclosure, Battery & Assembly</span>
+                        <span>$25</span>
+                    </div>
+
+                    <div class="flex justify-between border-b border-zinc-800 pb-2">
+                        <span>Quality Control & Testing</span>
+                        <span>$15</span>
+                    </div>
+
+                    <div class="flex justify-between pt-4 text-lg font-bold bg-zinc-900 px-4 py-3">
+                        <span>Total Manufacturing Cost</span>
+                        <span>$170</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT: PRICING & MARGINS -->
+            <div class="content-block" style="transition-delay:0.2s;">
+
+                <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-6">
+                    Pricing, Margins & Lifetime Value
+                </h3>
+
+                <div class="space-y-6 text-sm text-gray-400">
+
+                    <div class="flex justify-between border-b border-zinc-800 pb-2">
+                        <span>Average Selling Price (ASP)</span>
+                        <span class="font-bold text-white">$450</span>
+                    </div>
+
+                    <div class="flex justify-between border-b border-zinc-800 pb-2">
+                        <span>Gross Margin (Hardware)</span>
+                        <span class="font-bold">~62%</span>
+                    </div>
+
+                    <div class="flex justify-between border-b border-zinc-800 pb-2">
+                        <span>Monthly Software Subscription</span>
+                        <span class="font-bold">$45 / device</span>
+                    </div>
+
+                    <div class="flex justify-between border-b border-zinc-800 pb-2">
+                        <span>Annual Service & Support</span>
+                        <span class="font-bold">$60 / device</span>
+                    </div>
+
+                    <div class="flex justify-between pt-4 text-lg font-bold bg-white text-black px-4 py-3">
+                        <span>5-Year Device LTV</span>
+                        <span>$3,200+</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SCALE INSIGHT -->
+        <div class="mt-16 max-w-5xl text-sm text-gray-400 italic">
+            At scale (50,000+ units annually), manufacturing costs are projected to
+            decline by 30–35%, increasing blended gross margins toward 70%+ while
+            software and services dominate total lifetime value.
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Unit Economics</span>
+            <span>Slide 19 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 20: GO-TO-MARKET STRATEGY -->
+    <div class="slide" id="slide-20">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            20. Go-To-Market Strategy
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-5xl mb-10">
+            P.A.N.D.A.’s go-to-market strategy is designed around public health
+            procurement realities — prioritizing pilot validation, institutional
+            trust-building, and scalable deployment through government and NGO channels.
+        </p>
+
+        <!-- PHASED GTM -->
+        <div class="grid grid-cols-3 gap-12 content-block">
+
+            <!-- PHASE 1 -->
+            <div class="border border-zinc-800 p-5">
+                <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-3">
+                    Phase 01
+                </h3>
+                <h4 class="text-xl font-bold mb-4">
+                    Pilot & Clinical Validation
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    Controlled pilots establish clinical accuracy, usability,
+                    and cost-effectiveness within real rural healthcare environments.
+                </p>
+                <ul class="text-sm text-gray-400 space-y-3">
+                    <li>• 300–500 devices deployed</li>
+                    <li>• State-run primary health centers</li>
+                    <li>• Peer-reviewed outcome reports</li>
+                </ul>
+            </div>
+
+            <!-- PHASE 2 -->
+            <div class="border border-zinc-800 p-5 bg-zinc-900">
+                <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-3">
+                    Phase 02
+                </h3>
+                <h4 class="text-xl font-bold mb-4">
+                    Government Scale-Up
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    Successful pilots transition into large-scale procurement
+                    through national and provincial health missions.
+                </p>
+                <ul class="text-sm text-gray-400 space-y-3">
+                    <li>• District- and state-level tenders</li>
+                    <li>• Multi-year supply contracts</li>
+                    <li>• Embedded in public health budgets</li>
+                </ul>
+            </div>
+
+            <!-- PHASE 3 -->
+            <div class="border border-zinc-800 p-5">
+                <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-3">
+                    Phase 03
+                </h3>
+                <h4 class="text-xl font-bold mb-4">
+                    NGO & Global Expansion
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    International NGOs and multilateral organizations enable
+                    rapid deployment across multiple geographies.
+                </p>
+                <ul class="text-sm text-gray-400 space-y-3">
+                    <li>• UNICEF, WHO, Gates Foundation</li>
+                    <li>• Disaster response & refugee care</li>
+                    <li>• Cross-border standardization</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- ENABLING LEVERS -->
+        <div class="mt-10 grid grid-cols-2 gap-16 items-start">
+
+            <div class="content-block">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    Key Distribution Levers
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                    Deployment is accelerated through existing healthcare delivery
+                    networks, reducing sales friction and minimizing on-ground
+                    operational overhead.
+                </p>
+                <ul class="mt-6 space-y-3 text-sm text-gray-400">
+                    <li>• National health missions & digital health programs</li>
+                    <li>• District medical officers as champions</li>
+                    <li>• Local manufacturing & service partners</li>
+                </ul>
+            </div>
+
+            <div class="content-block" style="transition-delay:0.2s;">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-4">
+                    Trust & Adoption Drivers
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xl">
+                    Adoption is driven by clinical validation, physician endorsement,
+                    and demonstrated cost savings rather than consumer marketing.
+                </p>
+                <ul class="mt-6 space-y-3 text-sm text-gray-400">
+                    <li>• Medical college partnerships</li>
+                    <li>• Government-backed pilots</li>
+                    <li>• Outcome-based procurement metrics</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Go-To-Market</span>
+            <span>Slide 20 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 21: REGULATORY & COMPLIANCE -->
+    <div class="slide" id="slide-21">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            21. Regulatory & Compliance Readiness
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-5xl mb-10">
+            P.A.N.D.A.’s regulatory strategy balances rapid regional deployment
+            with a disciplined progression toward global medical device standards —
+            reducing adoption risk while preserving long-term scalability.
+        </p>
+
+        <!-- REGULATORY TIMELINE -->
+        <div class="grid grid-cols-3 gap-0 border border-zinc-800">
+
+            <!-- PHASE 1 -->
+            <div class="p-6 border-r border-zinc-800">
+                <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-3">
+                    Phase 01 · Immediate
+                </h3>
+                <h4 class="text-xl font-bold mb-4">
+                    Local Market Authorization
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    Initial deployment focuses on South Asia using established
+                    national medical device frameworks, enabling controlled
+                    pilots and early scale.
+                </p>
+                <ul class="text-sm text-gray-400 space-y-3">
+                    <li>• CDSCO (India) — Class B device pathway</li>
+                    <li>• DRAP (Pakistan) — medical device registration</li>
+                    <li>• Local clinical validation & usability trials</li>
+                </ul>
+            </div>
+
+            <!-- PHASE 2 -->
+            <div class="p-6 border-r border-zinc-800 bg-zinc-900">
+                <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-3">
+                    Phase 02 · Expansion
+                </h3>
+                <h4 class="text-xl font-bold mb-4">
+                    International Certification
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    Once regional validation is achieved, P.A.N.D.A. advances
+                    toward globally recognized certifications to unlock
+                    multilateral and NGO procurement.
+                </p>
+                <ul class="text-sm text-gray-400 space-y-3">
+                    <li>• CE Marking (EU MDR)</li>
+                    <li>• WHO Prequalification</li>
+                    <li>• Selective FDA 510(k) filings</li>
+                </ul>
+            </div>
+
+            <!-- PHASE 3 -->
+            <div class="p-6">
+                <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-3">
+                    Phase 03 · Governance
+                </h3>
+                <h4 class="text-xl font-bold mb-4">
+                    AI, Data & Clinical Oversight
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                    Long-term trust is built through transparent AI governance,
+                    strong data protection, and physician-in-the-loop safeguards.
+                </p>
+                <ul class="text-sm text-gray-400 space-y-3">
+                    <li>• Clinical decision support (not autonomous diagnosis)</li>
+                    <li>• Continuous post-market surveillance</li>
+                    <li>• Model versioning & auditability</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- COMPLIANCE STRIP -->
+        <div class="mt-10 grid grid-cols-3 gap-12">
+
+            <div class="content-block">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-3">
+                    Data Privacy
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Edge-first processing minimizes data exposure, ensuring
+                    compliance with GDPR, local data residency laws,
+                    and emerging AI governance frameworks.
+                </p>
+            </div>
+
+            <div class="content-block" style="transition-delay:0.15s;">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-3">
+                    Security Standards
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Security architecture aligns with ISO 27001 principles,
+                    encrypted local storage, and secure sync protocols
+                    when connectivity is available.
+                </p>
+            </div>
+
+            <div class="content-block" style="transition-delay:0.3s;">
+                <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-3">
+                    Risk Containment
+                </h4>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Physician oversight, conservative clinical thresholds,
+                    and explainable AI outputs reduce medico-legal
+                    and reputational risk.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- STRATEGIC INSIGHT -->
+        <div class="mt-10 max-w-5xl text-sm text-gray-400 italic text-center justify-center mx-auto">
+            By sequencing approvals and embedding governance from day one,
+            P.A.N.D.A. converts regulatory compliance into a competitive moat
+            rather than a growth constraint.
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Regulatory Readiness</span>
+            <span>Slide 21 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 22: TRACTION & PHASED ROADMAP (COMPACT) -->
+    <div class="slide" id="slide-22">
+
+        <h2 class="text-4xl font-bold mb-6 uppercase">
+            22. Traction & Phased Roadmap
+        </h2>
+
+        <p class="text-base text-gray-300 leading-relaxed max-w-5xl mb-8">
+            P.A.N.D.A.’s execution strategy follows a milestone-driven roadmap — balancing
+            clinical validation, controlled scale, and geographic expansion while strengthening
+            technology, partnerships, and regulatory standing.
+        </p>
+
+        <!-- TIMELINE -->
+        <div class="relative border-l-2 border-white pl-12 space-y-12 content-block">
+
+            <!-- PHASE I -->
+            <div class="relative">
+                <div class="absolute -left-[54.5px] top-2 w-3 h-3 bg-white rounded-full"></div>
+                <h3 class="text-lg font-bold mb-2">
+                    Phase I · Prototype & Validation (2025–2026)
+                </h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-3 max-w-4xl">
+                    Controlled rural pilots validating diagnostic accuracy, usability,
+                    and cost-effectiveness.
+                </p>
+            </div>
+
+            <!-- PHASE II -->
+            <div class="relative">
+                <div class="absolute -left-[54.5px] top-2 w-3 h-3 bg-white rounded-full"></div>
+                <h3 class="text-lg font-bold mb-2">
+                    Phase II · Scale & Adoption (2027–2028)
+                </h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-3 max-w-4xl">
+                    Expansion through government procurement and NGO partnerships,
+                    embedding P.A.N.D.A. into national health systems.
+                </p>
+            </div>
+
+            <!-- PHASE III -->
+            <div class="relative">
+                <div class="absolute -left-[54.5px] top-2 w-3 h-3 bg-white rounded-full"></div>
+                <h3 class="text-lg font-bold mb-2">
+                    Phase III · Global Expansion (2029–2032)
+                </h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-3 max-w-4xl">
+                    Regional expansion and AI capability growth, positioning P.A.N.D.A.
+                    as a global diagnostic infrastructure platform.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- METRICS STRIP -->
+        <div class="mt-10 grid grid-cols-3 gap-6 text-center content-block">
+
+            <div class="border border-zinc-800 p-5">
+                <h4 class="text-3xl font-black mb-1">94%+</h4>
+                <p class="text-[10px] uppercase tracking-widest text-gray-500">
+                    Diagnostic Sensitivity
+                </p>
+            </div>
+
+            <div class="border border-zinc-800 p-5 bg-zinc-900">
+                <h4 class="text-3xl font-black mb-1">500K+</h4>
+                <p class="text-[10px] uppercase tracking-widest text-gray-500">
+                    Patients Screened (2026)
+                </p>
+            </div>
+
+            <div class="border border-zinc-800 p-5">
+                <h4 class="text-3xl font-black mb-1">2</h4>
+                <p class="text-[10px] uppercase tracking-widest text-gray-500">
+                    Launch Countries
+                </p>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Traction & Roadmap</span>
+            <span>Slide 22 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 23: IMPACT METRICS & KPIs -->
+    <div class="slide" id="slide-23">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            23. Impact Metrics & Key Performance Indicators
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-5xl mb-12">
+            P.A.N.D.A. is designed to generate measurable clinical, economic, and system-level
+            impact. Our KPIs are tracked continuously across deployments and aligned with
+            global health benchmarks used by governments, NGOs, and multilateral institutions.
+        </p>
+
+        <!-- PRIMARY METRICS -->
+        <div class="grid grid-cols-3 gap-10 content-block mb-14">
+
+            <div class="border-2 border-zinc-800 p-8 text-center">
+                <h3 class="text-5xl font-black mb-4">−80%</h3>
+                <p class="text-sm uppercase tracking-widest text-gray-500 mb-2">
+                    Time to Clinical Referral
+                </p>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Reduction in time from symptom onset to first qualified referral
+                    for cardiac and respiratory conditions.
+                </p>
+            </div>
+
+            <div class="border-2 border-zinc-800 p-8 text-center bg-zinc-900">
+                <h3 class="text-5xl font-black mb-4">1.5M+</h3>
+                <p class="text-sm uppercase tracking-widest text-gray-500 mb-2">
+                    Lives Impacted by 2030
+                </p>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Estimated lives saved or significantly improved through
+                    early detection and intervention pathways.
+                </p>
+            </div>
+
+            <div class="border-2 border-zinc-800 p-8 text-center">
+                <h3 class="text-5xl font-black mb-4">$3.2B</h3>
+                <p class="text-sm uppercase tracking-widest text-gray-500 mb-2">
+                    Health System Savings
+                </p>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Avoided emergency care, late-stage treatment costs,
+                    and unnecessary hospital admissions.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- SECONDARY KPI GRID -->
+        <div class="grid grid-cols-4 gap-6 content-block mb-12">
+
+            <div class="border border-zinc-800 p-6">
+                <h4 class="text-2xl font-bold mb-2">94%+</h4>
+                <p class="text-xs uppercase tracking-widest text-gray-500 mb-1">
+                    Diagnostic Sensitivity
+                </p>
+                <p class="text-xs text-gray-400">
+                    Benchmarked against Tier-1 hospital equipment.
+                </p>
+            </div>
+
+            <div class="border border-zinc-800 p-6 bg-zinc-900">
+                <h4 class="text-2xl font-bold mb-2">90%</h4>
+                <p class="text-xs uppercase tracking-widest text-gray-500 mb-1">
+                    Patient Cost Reduction
+                </p>
+                <p class="text-xs text-gray-400">
+                    Compared to urban diagnostic pathways.
+                </p>
+            </div>
+
+            <div class="border border-zinc-800 p-6">
+                <h4 class="text-2xl font-bold mb-2">&lt;5 min</h4>
+                <p class="text-xs uppercase tracking-widest text-gray-500 mb-1">
+                    Diagnosis-to-Decision
+                </p>
+                <p class="text-xs text-gray-400">
+                    End-to-end screening and triage time.
+                </p>
+            </div>
+
+            <div class="border border-zinc-800 p-6">
+                <h4 class="text-2xl font-bold mb-2">70%+</h4>
+                <p class="text-xs uppercase tracking-widest text-gray-500 mb-1">
+                    Referral Compliance
+                </p>
+                <p class="text-xs text-gray-400">
+                    Patients completing recommended referrals.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- IMPACT PHILOSOPHY -->
+        <div class="max-w-4xl text-gray-400 text-sm italic leading-relaxed content-block justify-center mx-auto">
+            “Impact is not a side effect of P.A.N.D.A.’s business model —
+            it is the primary driver of adoption, defensibility, and long-term valuation.”
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Impact Metrics</span>
+            <span>Slide 23 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 24: CRITICAL RISK ANALYSIS -->
+    <div class="slide" id="slide-24">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            24. Critical Risk Analysis
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-5xl mb-12">
+            P.A.N.D.A. operates at the intersection of healthcare delivery, AI, and public
+            infrastructure. While this creates significant upside, it also introduces
+            identifiable risks that must be actively managed through governance,
+            technical design, and operational discipline.
+        </p>
+
+        <!-- RISK GRID -->
+        <div class="grid grid-cols-2 gap-14 content-block mb-14">
+
+            <!-- LEFT COLUMN -->
+            <div class="space-y-10">
+
+                <div class="border-l-4 border-white pl-6">
+                    <h3 class="text-xl font-bold mb-2">
+                        Regulatory & Approval Risk
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Medical device approval timelines in LMICs can be unpredictable,
+                        particularly for AI-enabled diagnostics where regulatory frameworks
+                        are still evolving. Delays may impact deployment schedules.
+                    </p>
+                </div>
+
+                <div class="border-l-4 border-white pl-6">
+                    <h3 class="text-xl font-bold mb-2">
+                        Hardware Supply Chain Risk
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Dependence on global semiconductor availability and contract
+                        manufacturing capacity introduces exposure to geopolitical and
+                        logistics disruptions.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="space-y-10">
+
+                <div class="border-l-4 border-white pl-6">
+                    <h3 class="text-xl font-bold mb-2">
+                        Clinical Trust & Adoption Risk
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Frontline health workers and physicians may initially resist
+                        AI-assisted diagnostics due to cultural norms, liability concerns,
+                        or skepticism toward automated decision support.
+                    </p>
+                </div>
+
+                <div class="border-l-4 border-white pl-6">
+                    <h3 class="text-xl font-bold mb-2">
+                        Model Accuracy & Drift Risk
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        AI models trained on specific populations may experience performance
+                        drift when exposed to new geographies, phenotypes, or disease patterns
+                        without continuous validation.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RISK SUMMARY STRIP -->
+        <div class="bg-zinc-900 border border-zinc-800 p-8 max-w-5xl content-block">
+            <p class="text-sm text-gray-300 leading-relaxed">
+                None of these risks are existential — but unmanaged, they can compound.
+                P.A.N.D.A.’s strategy focuses on early identification, structural mitigation,
+                and governance-driven controls rather than reactive fixes.
+            </p>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Risk Assessment</span>
+            <span>Slide 24 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 25: RISK MITIGATION FRAMEWORK -->
+    <div class="slide" id="slide-25">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            25. Risk Mitigation Framework
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-5xl mb-14">
+            P.A.N.D.A.’s risk posture is proactive, not reactive. Each identified risk is
+            addressed through structural design decisions, operational safeguards, and
+            governance mechanisms embedded directly into the product, deployment, and
+            partnership model.
+        </p>
+
+        <!-- MITIGATION GRID -->
+        <div class="grid grid-cols-2 gap-16 content-block mb-14">
+
+            <!-- LEFT COLUMN -->
+            <div class="space-y-12">
+
+                <div class="border-l-4 border-white pl-6">
+                    <h3 class="text-xl font-bold mb-3">
+                        Regulatory Strategy & Early Alignment
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Regulatory engagement begins during pilot phases, not post-deployment.
+                        Clinical validation protocols are aligned with CDSCO, DRAP, and WHO
+                        Prequalification requirements to reduce approval uncertainty.
+                    </p>
+                </div>
+
+                <div class="border-l-4 border-white pl-6">
+                    <h3 class="text-xl font-bold mb-3">
+                        Resilient Supply Chain Architecture
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Dual-sourced manufacturing across South and Southeast Asia, combined
+                        with component-level substitutions, reduces exposure to geopolitical
+                        shocks and semiconductor volatility.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="space-y-12">
+
+                <div class="border-l-4 border-white pl-6">
+                    <h3 class="text-xl font-bold mb-3">
+                        Physician-in-the-Loop Adoption Model
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        P.A.N.D.A. is positioned as a decision-support system rather than a
+                        diagnostic replacement, preserving clinician authority while improving
+                        triage speed and consistency.
+                    </p>
+                </div>
+
+                <div class="border-l-4 border-white pl-6">
+                    <h3 class="text-xl font-bold mb-3">
+                        Continuous Model Validation & Drift Control
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Federated learning and outcome-verified feedback loops enable regional
+                        adaptation without centralized data dependency, maintaining accuracy
+                        across diverse populations.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- GOVERNANCE STRIP -->
+        <div class="bg-zinc-900 border border-zinc-800 p-8 max-w-5xl content-block">
+            <p class="text-sm text-gray-300 leading-relaxed">
+                Governance oversight, audit readiness, and transparent performance reporting
+                ensure that risk management scales alongside deployment — preserving trust
+                with governments, clinicians, and investors.
+            </p>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Risk Mitigation</span>
+            <span>Slide 25 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 26: FINANCIAL PROJECTIONS -->
+    <div class="slide" id="slide-26">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            26. Financial Projections (High-Level)
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-5xl mb-12">
+            P.A.N.D.A.’s financial model prioritizes capital efficiency, predictable unit
+            economics, and disciplined scaling. Projections are based on contracted
+            deployments, conservative adoption curves, and phased geographic expansion.
+        </p>
+
+        <!-- FINANCIAL TABLE -->
+        <div class="content-block mb-14">
+
+            <!-- HEADER -->
+            <div class="grid grid-cols-6 gap-4 border-b border-white pb-3 text-xs uppercase tracking-widest text-gray-500">
+                <div>Year</div>
+                <div>Active Devices</div>
+                <div>Revenue</div>
+                <div>Gross Margin</div>
+                <div>Operating Costs</div>
+                <div>EBITDA</div>
+            </div>
+
+            <!-- 2026 -->
+            <div class="grid grid-cols-6 gap-4 border-b border-zinc-800 py-4 text-sm">
+                <div>2026 · Launch</div>
+                <div>2,500</div>
+                <div>$1.2M</div>
+                <div>62%</div>
+                <div>$2.8M</div>
+                <div class="text-red-500">(−$1.6M)</div>
+            </div>
+
+            <!-- 2027 -->
+            <div class="grid grid-cols-6 gap-4 border-b border-zinc-800 py-4 text-sm">
+                <div>2027 · Scale</div>
+                <div>15,000</div>
+                <div>$7.8M</div>
+                <div>65%</div>
+                <div>$5.2M</div>
+                <div class="text-green-500">$2.6M</div>
+            </div>
+
+            <!-- 2028 -->
+            <div class="grid grid-cols-6 gap-4 border-b border-zinc-800 py-4 text-sm bg-zinc-900">
+                <div class="font-bold">2028 · Expansion</div>
+                <div class="font-bold">60,000</div>
+                <div class="font-bold">$32.4M</div>
+                <div class="font-bold">68%</div>
+                <div class="font-bold">$12.5M</div>
+                <div class="text-green-500 font-bold">$19.9M</div>
+            </div>
+
+        </div>
+
+        <!-- FINANCIAL INSIGHTS -->
+        <div class="grid grid-cols-2 gap-16 content-block mb-12">
+
+            <div class="border-l-4 border-white pl-6">
+                <h3 class="text-xl font-bold mb-3">
+                    Revenue Composition
+                </h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Revenue is driven by a blended model of device sales or leasing,
+                    recurring SaaS subscriptions, and service contracts. As deployments
+                    mature, recurring revenue exceeds 55% of total topline.
+                </p>
+            </div>
+
+            <div class="border-l-4 border-white pl-6">
+                <h3 class="text-xl font-bold mb-3">
+                    Path to Profitability
+                </h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Break-even is achieved in Q3 2027 as manufacturing scale reduces
+                    unit costs and operating leverage improves across support and
+                    regulatory functions.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- ASSUMPTIONS STRIP -->
+        <div class="bg-zinc-900 border border-zinc-800 p-8 max-w-5xl content-block">
+            <p class="text-sm text-gray-300 leading-relaxed">
+                Assumptions exclude upside from data monetization, advanced AI modules,
+                or expansion beyond South Asia — providing a conservative baseline
+                for valuation and risk assessment.
+            </p>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Financial Outlook</span>
+            <span>Slide 26 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 27: LONG-TERM SCALABILITY VISION -->
+    <div class="slide" id="slide-27">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            27. Long-Term Scalability Vision
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-5xl mb-14">
+            P.A.N.D.A. is designed not as a single-purpose diagnostic device, but as a
+            scalable health intelligence platform. Once embedded at the primary care level,
+            the system compounds value across geographies, disease categories, and health
+            system workflows.
+        </p>
+
+        <!-- VISION GRID -->
+        <div class="grid grid-cols-2 gap-16 content-block mb-14">
+
+            <!-- LEFT COLUMN -->
+            <div class="space-y-12">
+
+                <div class="border-l-4 border-white pl-6">
+                    <h3 class="text-2xl font-bold mb-3">
+                        From Diagnostics to Health Infrastructure
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        With sufficient deployment density, P.A.N.D.A. evolves into the
+                        diagnostic backbone of rural health systems — enabling early
+                        detection, longitudinal patient tracking, and system-wide
+                        decision intelligence.
+                    </p>
+                </div>
+
+                <div class="border-l-4 border-white pl-6">
+                    <h3 class="text-2xl font-bold mb-3">
+                        Modular AI Capability Expansion
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        The platform supports modular AI upgrades without hardware replacement,
+                        including retinal screening for diabetic retinopathy, ultrasound-assisted
+                        maternal diagnostics, and pediatric respiratory analysis.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="space-y-12">
+
+                <div class="border-l-4 border-white pl-6">
+                    <h3 class="text-2xl font-bold mb-3">
+                        Geographic & Population Scale
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Following South Asia, expansion targets include East Africa and
+                        Southeast Asia — regions with similar infrastructure constraints
+                        and high unmet diagnostic demand.
+                    </p>
+                </div>
+
+                <div class="border-l-4 border-white pl-6">
+                    <h3 class="text-2xl font-bold mb-3">
+                        Data Network Effects
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Aggregated, anonymized diagnostic data enables population-level
+                        disease surveillance, health forecasting, and policy planning —
+                        creating defensible data moats and secondary revenue streams.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SCALE METRICS STRIP -->
+        <div class="grid grid-cols-3 gap-8 text-center content-block mb-12">
+
+            <div class="border border-zinc-800 p-8">
+                <h4 class="text-4xl font-black mb-2">15+</h4>
+                <p class="text-xs uppercase tracking-widest text-gray-500">
+                    Target Countries by 2032
+                </p>
+            </div>
+
+            <div class="border border-zinc-800 p-8 bg-zinc-900">
+                <h4 class="text-4xl font-black mb-2">1B+</h4>
+                <p class="text-xs uppercase tracking-widest text-gray-500">
+                    Annual Screenings Potential
+                </p>
+            </div>
+
+            <div class="border border-zinc-800 p-8">
+                <h4 class="text-4xl font-black mb-2">∞</h4>
+                <p class="text-xs uppercase tracking-widest text-gray-500">
+                    AI Upgrade Surface
+                </p>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Scalability Vision</span>
+            <span>Slide 27 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 28: PROTOTYPE VIDEO ONLY -->
+    <div class="slide" id="slide-28">
+
+        <!-- Centered Video -->
+        <div class="flex-1 flex items-center justify-center">
+
+            <div class="w-[80%] max-w-5xl">
+
+                <div class="relative aspect-video border-2 border-white bg-black">
+
+                    <!-- Replace with your actual video file -->
+                    <video
+                        class="w-full h-full object-cover"
+                        controls
+                        preload="metadata"
+                    >
+                        <source src="prototype-demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Prototype Demonstration</span>
+            <span>Slide 28 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 29: TEAM & EXECUTION CAPABILITY -->
+    <div class="slide" id="slide-29">
+
+        <h2 class="text-4xl font-bold mb-10 uppercase">
+            29. Team & Execution Capability
+        </h2>
+
+        <p class="text-lg text-gray-300 leading-relaxed max-w-5xl mb-12">
+            P.A.N.D.A. is built by a multidisciplinary team spanning AI engineering,
+            medical science, hardware systems, and operational execution.
+            Each member contributes directly to product delivery and field deployment.
+        </p>
+
+        <!-- TEAM GRID -->
+        <div class="grid grid-cols-3 gap-6 content-block">
+
+            <!-- CARD 1 -->
+            <div class="border border-zinc-800 p-5">
+                <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">ID · F2023376056</p>
+                <h3 class="text-lg font-bold mb-1">Zafra Noor Ejaz</h3>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="border border-zinc-800 p-5 bg-zinc-900">
+                <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">ID · F2023376057</p>
+                <h3 class="text-lg font-bold mb-1">Hamza Zulfiqar</h3>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="border border-zinc-800 p-5">
+                <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">ID · F2023376147</p>
+                <h3 class="text-lg font-bold mb-1">Syed Shabih Ali Haider</h3>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="border border-zinc-800 p-5 bg-zinc-900">
+                <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">ID · F2023376375</p>
+                <h3 class="text-lg font-bold mb-1">Faseeh Sohail</h3>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="border border-zinc-800 p-5">
+                <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">ID · F2023376092</p>
+                <h3 class="text-lg font-bold mb-1">Abdul Rehman</h3>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="border border-zinc-800 p-5 bg-zinc-900">
+                <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">ID · F2023376053</p>
+                <h3 class="text-lg font-bold mb-1">Muhammad Burhan Saqib</h3>
+            </div>
+
+            <!-- CARD 7 -->
+            <div class="border border-zinc-800 p-5">
+                <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">ID · F2023376066</p>
+                <h3 class="text-lg font-bold mb-1">Arham Shahid</h3>
+            </div>
+
+            <!-- CARD 8 -->
+            <div class="border border-zinc-800 p-5 bg-zinc-900">
+                <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">ID · F2023376037</p>
+                <h3 class="text-lg font-bold mb-1">Anoosha Alina</h3>
+            </div>
+
+            <!-- CARD 9 -->
+            <div class="border border-zinc-800 p-5">
+                <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">ID · F2023376046</p>
+                <h3 class="text-lg font-bold mb-1">Rahim Khan</h3>
+            </div>
+
+            <!-- CARD 10 -->
+            <div class="border border-zinc-800 p-5 bg-zinc-900">
+                <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">ID · F2023376262</p>
+                <h3 class="text-lg font-bold mb-1">Ahmad Bokhari</h3>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span>P.A.N.D.A. · Team Overview</span>
+            <span>Slide 29 / 30</span>
+        </div>
+
+    </div>
+
+    <!-- SLIDE 30: CLOSING VISION -->
+    <div class="slide" id="slide-30">
+
+        <div class="flex-1 flex flex-col justify-center items-center text-center">
+
+            <!-- Closing Label -->
+            <p class="text-xs uppercase tracking-[0.4em] text-gray-500 mb-10">
+                Final Perspective
+            </p>
+
+            <!-- Core Statement -->
+            <h1 class="text-7xl font-black leading-tight mb-10">
+                Intelligence is the Ultimate Cure.
+            </h1>
+
+            <!-- Vision -->
+            <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mb-14">
+                P.A.N.D.A. is building the diagnostic infrastructure for the next four billion people —
+                transforming healthcare from reactive treatment to proactive intelligence,
+                one community at a time.
+            </p>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <span>P.A.N.D.A. · End of Presentation</span>
+            <span>Slide 30 / 30</span>
+        </div>
+
+    </div>
+
+    <script>
+    /* -----------------------------
+    CORE SLIDE STATE
+    ----------------------------- */
+    let currentSlide = 1;
+    const totalSlides = 30;
+
+    /* -----------------------------
+    SHOW SLIDE (SINGLE SOURCE)
+    ----------------------------- */
+    function showSlide(index) {
+        document.querySelectorAll('.slide').forEach(slide =>
+            slide.classList.remove('active')
+        );
+
+        const slide = document.getElementById(`slide-${index}`);
+        if (!slide) return;
+
+        slide.classList.add('active');
+
+        // Progress bar
+        const progress = (index / totalSlides) * 100;
+        const bar = document.getElementById('progressBar');
+        if (bar) bar.style.width = `${progress}%`;
+
+        // Run animations
+        animateBars(slide);
+        if (index === 17) animateCompetitiveGraph();
+
+        window.scrollTo(0, 0);
+    }
+
+    /* -----------------------------
+    BAR CHART ANIMATION (Slides 3, etc.)
+    ----------------------------- */
+    function animateBars(slide) {
+        const bars = slide.querySelectorAll('.bar[data-value]');
+        bars.forEach((bar, i) => {
+            bar.style.height = '0%';
+            setTimeout(() => {
+                bar.style.transition = 'height 0.8s ease';
+                bar.style.height = bar.dataset.value;
+            }, i * 150);
+        });
+    }
+
+    /* -----------------------------
+    SLIDE 17: COMPETITIVE GRAPH
+    ----------------------------- */
+    function animateCompetitiveGraph() {
+        const slide = document.getElementById('slide-17');
+        if (!slide || !slide.classList.contains('active')) return;
+
+        const dots = slide.querySelectorAll('.graph-dot');
+
+        dots.forEach((dot, i) => {
+            const x = dot.dataset.x;
+            const y = dot.dataset.y;
+
+            // Position inside plot area
+            dot.style.left = `${x}%`;
+            dot.style.bottom = `${y}%`;
+
+            // Reset state (important for revisits)
+            dot.style.opacity = 0;
+            dot.style.transform = 'translate(-50%, 50%) scale(0)';
+
+            setTimeout(() => {
+                dot.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                dot.style.opacity = 1;
+                dot.style.transform = 'translate(-50%, 50%) scale(1)';
+            }, i * 200);
+        });
+    }
+
+    /* -----------------------------
+    NAVIGATION
+    ----------------------------- */
+    function nextSlide() {
+        if (currentSlide < totalSlides) {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+    }
+
+    function prevSlide() {
+        if (currentSlide > 1) {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+    }
+
+    /* -----------------------------
+    KEYBOARD CONTROLS
+    ----------------------------- */
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === 'Enter') nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    /* -----------------------------
+    INITIAL LOAD
+    ----------------------------- */
+    showSlide(currentSlide);
+    </script>
+
+</body>
+</html>
